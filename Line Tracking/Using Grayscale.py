@@ -22,10 +22,10 @@ while True:
 	blur = cv2.GaussianBlur(gray,(5,5),0)
 
 	# threshold is a function to identify pixels in a certain range
-	# all pixels above thresh_values become white
+	# all pixels above thresh_values become black, those below become white
 	# thresh contains the modified image
 	thresh_value = cv2.getTrackbarPos("Grayscale Threshold","Frame")
-	ret,thresh = cv2.threshold(blur,thresh_value,255,cv2.THRESH_BINARY)
+	ret,thresh = cv2.threshold(blur,thresh_value,255,cv2.THRESH_BINARY_INV)
 
 	cv2.imshow("Frame", thresh)
 

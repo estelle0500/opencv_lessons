@@ -1,11 +1,13 @@
 import numpy as np
 import cv2
+import os
 
 # create a window named "Frame"
 cv2.namedWindow("Frame")
 
 # load a cat picture from opencv_lessons/Images
-image = cv2.imread("../Images/cat.jpeg", 1)
+path = str(os.path.dirname(__file__)) + "/../Images/cat.jpeg"
+image = cv2.imread(path, 1)
 
 # resize the image to 1000 pixels wide and 650 pixels tall
 image = cv2.resize(image, (1000,650))
